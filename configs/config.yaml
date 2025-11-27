@@ -1,0 +1,51 @@
+# Conditional GAN Configuration
+
+# Model parameters
+model:
+  z_dim: 100
+  label_dim: 10
+  img_size: 28
+  img_channels: 1
+  hidden_dim: 256
+  dropout_rate: 0.3
+
+# Training parameters
+training:
+  epochs: 50
+  batch_size: 64
+  lr: 0.0002
+  beta1: 0.5
+  beta2: 0.999
+  
+# Data parameters
+data:
+  name: "MNIST"
+  data_dir: "./data"
+  num_workers: 2
+  normalize_mean: [0.5]
+  normalize_std: [0.5]
+
+# Sampling parameters
+sampling:
+  num_samples: 64
+  samples_per_class: 8
+  seed: 42
+
+# Paths
+paths:
+  save_dir: "./assets"
+  checkpoint_dir: "./assets/checkpoints"
+  samples_dir: "./assets/samples"
+  logs_dir: "./assets/logs"
+
+# Device settings
+device:
+  use_cuda: true
+  use_mps: true
+  deterministic: true
+
+# Logging
+logging:
+  log_every_n_epochs: 10
+  save_samples_every_n_epochs: 10
+  save_checkpoint_every_n_epochs: 20
